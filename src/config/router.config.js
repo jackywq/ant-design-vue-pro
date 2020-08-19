@@ -260,6 +260,23 @@ export const asyncRouterMap = [
             ]
           }
         ]
+      },
+       // newPage
+      {
+        path: '/new-page',
+        component: RouteView,
+        redirect: '/new-page/news',
+        name: 'new-page',
+        meta: { title: '新增页', icon: 'user', keepAlive: true, permission: [ 'user' ] },
+        children: [
+          {
+            path: '/new-page/news',
+            name: 'news',
+            component: () => import('@/views/newPage/news'),
+            meta: { title: '新闻页', hidden: true, keepAlive: true, permission: [ 'user' ] }
+
+          }
+        ]
       }
 
       // other
